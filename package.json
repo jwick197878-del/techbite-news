@@ -1,0 +1,20 @@
+{
+  "name": "auto-content-site",
+  "version": "1.0.0",
+  "description": "Automated content site with ad revenue",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "generate": "node scripts/generate-content.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^16.3.1",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "express-session": "^1.19.0",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0"
+  }
+}
