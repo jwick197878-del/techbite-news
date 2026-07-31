@@ -1,16 +1,27 @@
-app = "techbite-news"
-primary_region = "iad"
+# fly.toml app configuration file generated for techbite-news-sqvxna on 2026-07-31T00:01:33Z
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'techbite-news-sqvxna'
+primary_region = 'iad'
 
 [build]
-  builder = "heroku/buildpacks:20"
+  builder = 'heroku/buildpacks:20'
+
+[env]
+  AD_CLIENT = 'ca-pub-XXXXXXXXXXXXXXXX'
+  SITE_NAME = 'TechBite News'
 
 [http_service]
-  internal_port = 3000
+  internal_port = 8080
   force_https = true
-  auto_stop_machines = false
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
 
-[env]
-  SITE_NAME = "TechBite News"
-  AD_CLIENT = "ca-pub-XXXXXXXXXXXXXXXX"
+[[vm]]
+  memory = '1gb'
+  cpu_kind = 'shared'
+  cpus = 1
+  memory_mb = 256
